@@ -32,7 +32,7 @@ module Github
     end
 
     def path
-      @path ||= "#{language.slug}/#{category.slug}/#{@doc.slug}.md"
+      @path ||= "docs/#{language.slug}/#{category.slug}/#{@doc.slug}.md"
     end
 
     def category
