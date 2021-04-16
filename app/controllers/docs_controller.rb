@@ -26,6 +26,7 @@ class DocsController < ApplicationController
     if valid_slug
       if @doc.save
         flash[:success] = 'Doc created sucessfully!'
+        Github::CreateJob.perform_later(@doc)
         redirect_to doc_path(@doc)
       else
         flash.now[:alert] = 'Unable to create!'
@@ -44,6 +45,7 @@ class DocsController < ApplicationController
 
     if @doc.save
       flash[:success] = 'Doc updated sucessfully!'
+      Github::UpdateJob.perform_later(@doc)
       redirect_to doc_path(@doc)
     else
       flash.now[:alert] = 'Unable to update!'
