@@ -279,12 +279,6 @@ Devise.setup do |config|
                     ENV['GOOGLE_CLIENT_SECRET']
   end
 
-  if ENV['FACEBOOK_APP_ID'].present?
-    config.omniauth :facebook,
-                    ENV['FACEBOOK_APP_ID'],
-                    ENV['FACEBOOK_APP_SECRET']
-  end
-
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

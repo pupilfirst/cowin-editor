@@ -1,8 +1,8 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  skip_before_action :verify_authenticity_token, only: %i[facebook google_oauth2]
+  skip_before_action :verify_authenticity_token, only: %i[google_oauth2]
 
- # GET /auth/:provider/callback
- def oauth_callback
+  # GET /auth/:provider/callback
+  def oauth_callback
     user = User.find_by_email(auth_hash['info']['email'])
 
     if user.present?
@@ -10,7 +10,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to after_sign_in_path_for(user)
     else
       if !auth_hash['info']['email'].to_s.empty?
-        user = User.create!(email: auth_hash['info']['email'], name: auth_hash['info']['name'].presence || 'John Doe')
+        user =
+          User.create!(
+            email: auth_hash['info']['email'],
+            name: auth_hash['info']['name'].presence || 'John Doe',
+          )
         sign_in user
         redirect_to after_sign_in_path_for(user)
       else
@@ -38,14 +42,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def email_blank_flash
-    message = "We're sorry, but we did not receive your email address from #{provider_name}. "
+    message =
+      "We're sorry, but we did not receive your email address from #{provider_name}. "
 
-    message += case provider_name
+    message +=
+      case provider_name
       when 'Facebook'
         'Please <a href="https://www.facebook.com/settings?tab=applications" target="_blank" rel="noopener">remove \' Your Site Builder \' from your authorized apps list</a> and try signing in again.'
       else
         'Please sign in using another method.'
-    end
+      end
 
     message.html_safe
   end

@@ -10,24 +10,13 @@
         <div class="mt-4 flex-col justify-between">
           <div class="mt-8">
             <% if ENV['GOOGLE_CLIENT_ID'].present? %>
-              <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post  do%>
+              <%= button_to user_google_oauth2_omniauth_authorize_path  do%>
                 <button
                   class="btn bg-white shadow btn-large w-full hover:shadow-md"
                   type="submit"
                 >
                   <%= image_tag 'login/google-icon.svg', class: 'w-4', alt: 'Continue with Google' %>
                   <span class="ml-2">Continue with Google</span>
-                </button>
-              <% end %>
-            <% end %>
-            <% if ENV['FACEBOOK_APP_ID'].present? %>
-              <%= link_to user_facebook_omniauth_authorize_path, method: :post  do%>
-                <button
-                  class="mt-2 btn bg-white shadow btn-large w-full hover:shadow-md"
-                  type="submit"
-                >
-                  <i class="fab fa-facebook text-lg text-blue-700"></i>
-                  <span class="ml-2">Continue with Facebook</span>
                 </button>
               <% end %>
             <% end %>
