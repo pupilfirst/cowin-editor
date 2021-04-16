@@ -1,1 +1,23 @@
-Foo
+<div class="bgs-gray-100">
+  <div class="min-h-screen">
+    <h1
+      class="text-3xl md:text-6xl text-center font-light leading-tight py-8 md:py-24"
+    >
+      Cowin
+      <span class="block font-bold text-primary-500">Docs Manager</span>
+    </h1>
+    <div
+      class="mx-auto md:flex-row flex-col flex justify-center mx-auto text-center"
+    >
+      <% if current_user.present? %>
+        <a class="button btn-primary btn-large m-2" href="languages">
+          Manage your docs
+        </a>
+      <% else %>
+        <a class="button btn-primary btn-large m-2" href="sign_in">
+          Manage your docs
+        </a>
+      <% end %>
+    </div>
+  </div>
+</div>

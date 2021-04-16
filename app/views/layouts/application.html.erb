@@ -41,7 +41,9 @@
     <% if content_for?(:wrapper) %>
       <%= yield :wrapper %>
     <% else %>
-      <%= yield %>
+      <div class="max-w-3xl w-full mx-auto relative px-3 md:px-6 pb-4">
+        <%= yield %>
+      </div>
     <% end %>
     <%= render 'layouts/footer' %>
     <%= yield :tail %>

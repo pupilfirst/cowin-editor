@@ -1,0 +1,13 @@
+<%= render partial: "/layouts/breadcrumbs" %>
+
+<div class="mt-4">
+  <% @docs.each do |doc| %>
+    <%= link_to doc_path(doc) do%>
+      <div
+        class="flex items-strecth shadow bg-white rounded-lg mb-3 overflow-hidden p-4"
+      >
+        <%= doc.title%>
+      </div>
+    <%end%>
+  <%end%>
+</div>

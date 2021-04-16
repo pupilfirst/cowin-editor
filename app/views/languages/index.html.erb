@@ -1,0 +1,13 @@
+<%= render partial: "/layouts/breadcrumbs" %>
+
+<div class="mt-4">
+  <% @languages.each do |lang| %>
+    <%= link_to language_categories_path(lang) do%>
+      <div
+        class="flex items-strecth shadow bg-white rounded-lg mb-3 overflow-hidden p-4"
+      >
+        <%= lang.name%>
+      </div>
+    <%end%>
+  <%end%>
+</div>

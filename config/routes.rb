@@ -15,5 +15,15 @@ Rails
     # post '/sign_in', to: 'sessions#send_sign_in_mail'
     get '/sign_out', to: 'sessions#sign_out_user'
 
+    resources :languages, only: %w[index] do
+      resources :categories, only: %w[index]
+    end
+
+    resources :categories, only: %w[] do
+      resources :docs, only: %w[index]
+    end
+
+    resources :docs, only: %w[show]
+
     root to: 'home#index'
   end

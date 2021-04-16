@@ -23,6 +23,8 @@ gem "devise", github: "heartcombo/devise", branch: "master"
 gem "omniauth-rails_csrf_protection", '~> 1.0.0'
 # Oauth2 strategy for Google. https://github.com/zquestz/omniauth-google-oauth2
 gem 'omniauth-google-oauth2', '~> 0.8.1'
+# github api
+gem "octokit", "~> 4.0"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -46,6 +48,7 @@ group :development do
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+   gem "pry", "~> 0.14.0"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
