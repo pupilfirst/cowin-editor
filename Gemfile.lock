@@ -111,6 +111,8 @@ GEM
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jwt (2.2.2)
+    kramdown (2.3.1)
+      rexml
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -208,6 +210,7 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rexml (3.2.5)
     ruby2_keywords (0.0.4)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -227,6 +230,9 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -275,6 +281,7 @@ DEPENDENCIES
   devise!
   dotenv-rails (~> 2.2)
   jbuilder (~> 2.7)
+  kramdown (~> 2.3)
   listen (~> 3.3)
   octokit (~> 4.0)
   omniauth-google-oauth2 (~> 0.8.1)
@@ -286,6 +293,7 @@ DEPENDENCIES
   rails (~> 6.1.3, >= 6.1.3.1)
   sass-rails (>= 6)
   selenium-webdriver
+  simple_form (~> 5.1.0)
   spring
   turbolinks (~> 5)
   tzinfo-data

@@ -1,12 +1,23 @@
 <%= render partial: "/layouts/breadcrumbs" %>
-
+<div class="md:flex mt-6 justify-between items-center space-y-4">
+  <div class="text-3xl font-bold">
+    <%= @category.title%>
+  </div>
+  <div class="flex space-x-2">
+    <%= link_to "~ Edit Category", edit_category_path(@category), class: "cursor-pointer block px-2 md:px-5 py-2 md:py-3 text-gray-900 font-semibold rounded-md border border-gray-500 shadow hover:text-gray-700 hover:shadow-2xl hover:bg-gray-100 hover:to-gray-300 transition"%>
+    <%= link_to "+ Add Doc", new_category_doc_path(@category), class: "cursor-pointer block px-2 md:px-5 py-2 md:py-3 text-gray-900 font-semibold rounded-md border border-gray-500 shadow hover:text-gray-700 hover:shadow-2xl hover:bg-gray-100 hover:to-gray-300 transition"%>
+  </div>
+</div>
 <div class="mt-4">
   <% @docs.each do |doc| %>
     <%= link_to doc_path(doc) do%>
       <div
-        class="flex items-strecth shadow bg-white rounded-lg mb-3 overflow-hidden p-4"
+        class="flex justify-between cursor-pointer mt-4 p-5 border border-gray-500 text-gray-900 font-semibold rounded-md shadow hover:text-gray-700 hover:shadow-2xl hover:bg-gray-100 hover:to-gray-300 transition"
       >
-        <%= doc.title%>
+        <div class="text-lg font-semibold">
+          <%= doc.title%>
+        </div>
+        <div>View</div>
       </div>
     <%end%>
   <%end%>

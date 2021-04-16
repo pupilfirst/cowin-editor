@@ -1,0 +1,24 @@
+<div
+  class="bg-white shadow overflow-hidden sm:rounded-lg max-w-3xl mx-auto mt-4"
+>
+  <div
+    class="px-6 py-5 border-b border-gray-200 flex flex-col items-between justify-center  lg:flex-row lg:items-center lg:justify-between sm:px-6"
+  >
+    <div class="mt-4 text-3xl font-semibold">Create a New Doc</div>
+  </div>
+  <div class="px-6 py-4 mx-auto">
+    <section class="mt-8">
+      <%= simple_form_for [@category, @doc], defaults: { input_html: { class: 'form-input mt-1 font-sans' }, wrapper_html: { class: 'flex flex-col my-4' }, label_html: { class: 'mb-1' } } do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <%= f.input :title, required: true, label: 'Enter Doc Title' %>
+        <%= f.input :slug, required: true, label: 'Enter the file name' %>
+        <%= f.input :content, as: :text, required: true, label: 'Contents (Markdown)' %>
+
+        <span class="inline-flex rounded-md shadow-sm">
+          <%= f.button :submit, 'Create Doc', class: 'mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition ease-in-out duration-150' %>
+        </span>
+      <% end %>
+    </section>
+  </div>
+</div>

@@ -56,4 +56,5 @@ module.exports = {
   purge: {
     content: ["./app/**/*.html.erb", "./app/**/*.res"],
   },
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };

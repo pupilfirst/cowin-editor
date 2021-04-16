@@ -15,15 +15,15 @@ Rails
     # post '/sign_in', to: 'sessions#send_sign_in_mail'
     get '/sign_out', to: 'sessions#sign_out_user'
 
-    resources :languages, only: %w[index] do
-      resources :categories, only: %w[index]
+    resources :languages, only: %w[index create update new edit] do
+      resources :categories, only: %w[index new create]
     end
 
-    resources :categories, only: %w[] do
-      resources :docs, only: %w[index]
+    resources :categories, only: %w[edit update] do
+      resources :docs, only: %w[index new create]
     end
 
-    resources :docs, only: %w[show]
+    resources :docs, only: %w[show edit update]
 
     root to: 'home#index'
   end
