@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
-
+# Dotenv rails
+gem "dotenv-rails", "~> 2.2", groups: %i[development test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use postgresql as the database for Active Record
@@ -17,6 +18,12 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+# Flexible authentication solution for Rails with Warden. https://github.com/plataformatec/devise
+gem "devise", github: "heartcombo/devise", branch: "master"
+gem "omniauth-rails_csrf_protection", '~> 1.0.0'
+# Oauth2 strategy for Google. https://github.com/zquestz/omniauth-google-oauth2
+gem 'omniauth-google-oauth2', '~> 0.8.1'
+gem 'omniauth-facebook', '~> 8.0.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
