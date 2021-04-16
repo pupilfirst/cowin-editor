@@ -1,21 +1,25 @@
 <div class="bgs-gray-100">
   <div class="min-h-screen">
     <h1
-      class="text-3xl md:text-6xl text-center font-light leading-tight py-8 md:py-24"
+      class="mt-10 text-3xl md:text-5xl lg:text-7xl 2xl:text-8xl py-2 lg:pt-8 lg:pb-4 text-center"
     >
-      Cowin
-      <span class="block font-bold text-primary-500">Docs Manager</span>
+      Cowin <br />
+      <span class="hero__title-gradient">Docs Manager</span>
     </h1>
-    <div
-      class="mx-auto md:flex-row flex-col flex justify-center mx-auto text-center"
-    >
+    <div class="mx-auto md:flex-row flex-col flex justify-center text-center">
       <% if current_user.present? %>
-        <a class="button btn-primary btn-large m-2" href="languages">
+        <a
+          class="inline-block w-full md:w-64 p-3 text-center bg-gradient-to-r from-primary-500 to-secondary-400 text-gray-900 border border-primary-500 font-semibold rounded-md shadow-lg hover:shadow-2xl hover:bg-secondary-400 hover:to-primary-500 transition"
+          href="languages"
+        >
           Manage your docs
         </a>
       <% else %>
-        <a class="button btn-primary btn-large m-2" href="sign_in">
-          Manage your docs
+        <a
+          class="mt-4 inline-block w-full md:w-64 p-3 text-center bg-gradient-to-r from-primary-500 to-secondary-400 text-gray-900 border border-primary-500 font-semibold rounded-md shadow-lg hover:shadow-2xl hover:bg-secondary-400 hover:to-primary-500 transition"
+          href="/users/sign_in"
+        >
+          Manage docs
         </a>
       <% end %>
     </div>

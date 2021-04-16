@@ -2,13 +2,12 @@
   <title>Sign In</title>
 <% end %>
 
-<div class="flex bg-gray-100 min-h-screen">
+<div class="flex min-h-screen">
   <div class="w-full lg:w-3/6 mx-auto flex justify-center items-center">
-    <div class="max-w-md w-full mx-auto px-4 py-8">
-      <%= image_tag 'home/logo.jpg', class: 'h-12 mx-auto', alt: 'you_app_name' %>
+    <div class="max-w-md w-full mx-auto px-4">
       <div>
-        <div class="mt-4 flex-col justify-between">
-          <div class="mt-8">
+        <div class="-mt-10 flex-col justify-between">
+          <div>
             <% if ENV['GOOGLE_CLIENT_ID'].present? %>
               <%= button_to user_google_oauth2_omniauth_authorize_path  do%>
                 <button

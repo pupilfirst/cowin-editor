@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :authenticate_user!, only: %w[sign_out_user]
+
   # GET /sign_in
   def sign_in_form
     @path = params[:referrer]

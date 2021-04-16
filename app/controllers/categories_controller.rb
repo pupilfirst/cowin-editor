@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_language, only: %w[index new create]
 
   def index
@@ -49,7 +50,7 @@ class CategoriesController < ApplicationController
   end
 
   def valid_slug
-    Category.where(slug: category_params[:slug]).blank?
+    @language.categories.where(slug: category_params[:slug]).blank?
   end
 
   def category_params

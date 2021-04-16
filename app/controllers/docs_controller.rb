@@ -1,4 +1,5 @@
 class DocsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_category, only: %w[index new create]
 
   def index
@@ -60,7 +61,7 @@ class DocsController < ApplicationController
   end
 
   def valid_slug
-    Doc.where(slug: doc_params[:slug]).blank?
+    @category.docs.where(slug: doc_params[:slug]).blank?
   end
 
   def doc_params

@@ -8,7 +8,7 @@
   </div>
   <div class="px-6 py-4 mx-auto">
     <section class="mt-8">
-      <%= simple_form_for [@category, @doc], defaults: { input_html: { class: 'form-input mt-1 font-sans' }, wrapper_html: { class: 'flex flex-col my-4' }, label_html: { class: 'mb-1' } } do |f| %>
+      <%= simple_form_for [@category, @doc], defaults: { input_html: { class: 'shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md h-12' }, wrapper_html: { class: 'flex flex-col my-4' }, label_html: { class: 'block text-sm font-medium text-gray-700 mb-2' } } do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <%= f.input :title, required: true, label: 'Enter Doc Title' %>

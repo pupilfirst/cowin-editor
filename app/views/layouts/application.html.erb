@@ -18,7 +18,7 @@
     <%= yield :head %>
   </head>
 
-  <body>
+  <body class="min-h-full flex flex-col items-stretch">
     <% unless @hide_nav %>
       <%= render 'layouts/header' %>
     <% end %>
@@ -41,8 +41,10 @@
     <% if content_for?(:wrapper) %>
       <%= yield :wrapper %>
     <% else %>
-      <div class="max-w-3xl w-full mx-auto relative px-3 md:px-6 pb-4">
-        <%= yield %>
+      <div class="flex-grow bg-gray-0 min-h-screen">
+        <div class="max-w-3xl w-full mx-auto px-3 md:px-6 pb-4 ">
+          <%= yield %>
+        </div>
       </div>
     <% end %>
     <%= render 'layouts/footer' %>

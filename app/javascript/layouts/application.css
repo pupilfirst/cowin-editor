@@ -66,6 +66,14 @@ h6 {
   font-size: 0.875rem;
 }
 
+.hero__title-gradient {
+  @apply bg-gradient-to-r from-secondary-500 to-primary-500;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-decoration-break: clone;
+}
+
 /* Button */
 
 .btn {
@@ -102,87 +110,6 @@ h6 {
   @apply bg-primary-800;
 }
 
-.btn-primary-ghost {
-  @apply text-primary-500 border border-primary-500;
-}
-
-.btn-primary-ghost:hover {
-  @apply bg-primary-100 text-primary-600 border-primary-400;
-}
-
-.btn-primary-ghost:focus {
-  @apply bg-primary-800 text-white border-primary-400;
-}
-
-.btn-success {
-  @apply bg-green-600 text-white;
-  background-image: linear-gradient(
-    135deg,
-    rgba(56, 161, 105, 1) 0%,
-    rgba(47, 133, 90, 1) 100%
-  );
-}
-
-.btn-success:hover {
-  @apply bg-green-600;
-  background-image: linear-gradient(
-    135deg,
-    rgba(47, 133, 90, 1) 0%,
-    rgba(39, 103, 73, 1) 100%
-  );
-}
-
-.btn-success:focus {
-  @apply bg-green-800;
-  background-image: none;
-}
-
-.btn-warning {
-  @apply bg-yellow-500 text-white;
-  background-image: linear-gradient(
-    135deg,
-    rgba(237, 137, 54, 1) 0%,
-    rgba(221, 107, 32, 1) 100%
-  );
-}
-
-.btn-warning:hover {
-  @apply bg-yellow-600;
-  background-image: linear-gradient(
-    135deg,
-    rgba(221, 107, 32, 1) 0%,
-    rgba(192, 86, 33, 1) 100%
-  );
-}
-
-.btn-warning:focus {
-  @apply bg-yellow-800;
-  background-image: none;
-}
-
-.btn-danger {
-  @apply bg-red-500 text-white;
-  background-image: linear-gradient(
-    135deg,
-    rgba(245, 101, 101, 1) 0%,
-    rgba(229, 62, 62, 1) 100%
-  );
-}
-
-.btn-danger:hover {
-  @apply bg-red-600;
-  background-image: linear-gradient(
-    135deg,
-    rgba(229, 62, 62, 1) 0%,
-    rgba(197, 48, 48, 1) 100%
-  );
-}
-
-.btn-danger:focus {
-  @apply bg-red-800;
-  background-image: none;
-}
-
 button:disabled,
 .disabled {
   @apply cursor-not-allowed bg-gray-100 text-gray-500 shadow-none border-transparent;
@@ -207,101 +134,4 @@ button:disabled:focus,
 
 .btn-large {
   @apply py-2 px-5 text-sm h-10;
-}
-
-/* Toggle buttons */
-
-.toggle-button__group {
-  @apply relative leading-relaxed rounded bg-white;
-}
-
-.toggle-button__button {
-  @apply flex-1 text-sm font-semibold py-1 px-6 text-gray-700 border border-gray-400 border-r-0;
-}
-
-.toggle-button__button:first-child {
-  @apply rounded-l border-l;
-}
-
-.toggle-button__button:last-child {
-  @apply rounded-r border-r border-l-0;
-}
-
-.toggle-button__button--active,
-.toggle-button__button--active:hover {
-  @apply bg-primary-100 text-primary-600 border-primary-500;
-  border-width: 1px !important;
-}
-
-.toggle-button__button:hover {
-  @apply bg-gray-200 text-gray-900;
-}
-
-.toggle-button__button:focus {
-  @apply outline-none text-primary-600;
-}
-
-.toggle-button__button--active + .toggle-button__button {
-  border-left: none;
-}
-
-/* Element Hover */
-.element-editor__container {
-  @apply relative border border-transparent border-dashed;
-}
-
-.element-editor__container:hover {
-  @apply border border-primary-600;
-}
-
-.element-editor__container:hover .element-editor__image-resize-panel,
-.element-editor__conatiner:active .element-editor__image-resize-panel {
-  @apply opacity-100 translate-y-1;
-}
-
-.element-editor__image-resize-panel-box {
-  background-color: rgba(31, 13, 66, 0.75);
-}
-
-/* Block Hover */
-.block-editor__container {
-  @apply relative border border-transparent border-dashed;
-}
-
-.block-editor__container:hover {
-  @apply border border-blue-600;
-}
-
-.block-editor__container:hover .block-editor__image-resize-panel,
-.block-editor__conatiner:active .block-editor__image-resize-panel {
-  @apply opacity-100 translate-y-1;
-}
-
-.block-editor__image-resize-panel-box {
-  background-color: rgba(31, 13, 66, 0.75);
-}
-
-/* Section Hover */
-.section-editor__container {
-  @apply relative border border-transparent border-dashed;
-}
-
-.section-editor__container:hover {
-  @apply border border-indigo-800;
-}
-
-.section-editor__container:hover .section-editor__image-resize-panel,
-.section-editor__conatiner:active .section-editor__image-resize-panel {
-  @apply opacity-100 translate-y-1;
-}
-
-.properties-editor {
-  width: 100%;
-  z-index: 501;
-}
-
-@screen xl {
-  .properties-editor {
-    width: 20rem;
-  }
 }
