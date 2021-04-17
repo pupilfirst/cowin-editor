@@ -10,13 +10,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to after_sign_in_path_for(user)
     else
       if !auth_hash['info']['email'].to_s.empty?
-        user =
-          User.create!(
-            email: auth_hash['info']['email'],
-            name: auth_hash['info']['name'].presence || 'John Doe',
-          )
-        sign_in user
-        redirect_to after_sign_in_path_for(user)
+        flash[:alert] =
+          'Authentication failed. You are not authorized to view this page!'
+        redirect_to root_path
       else
         flash.alert = email_blank_flash
         redirect_to root_path
