@@ -9,7 +9,7 @@
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.0",
     "css-loader": "^5.2.1",
-    "css-minimizer-webpack-plugin": "^2.0.0",
+    "css-minimizer-webpack-plugin": "^1.0.0",
     "mini-css-extract-plugin": "^1.4.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.1",
