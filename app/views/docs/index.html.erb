@@ -16,6 +16,12 @@
       >
         <div class="text-lg font-semibold">
           <%= doc.title%>
+          <div class="mt-2">
+            <div class="text-md">
+              <%= doc.excerpt%>
+            </div>
+            <div class="text-md font-bold">By: <%= doc.user.name%></div>
+          </div>
         </div>
         <div>View</div>
       </div>

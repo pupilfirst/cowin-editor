@@ -15,7 +15,7 @@ module Github
           path,
           "Update #{@doc.slug}.md",
           file.sha,
-          @doc.content,
+          Docs::CreateArticleService.new(@doc).execute,
         )
       rescue StandardError
         puts 'Error'

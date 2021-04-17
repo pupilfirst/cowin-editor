@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauthable,
          omniauth_providers: %i[google_oauth2 facebook]
 
+  has_many :docs, dependent: :destroy
+
   def password_required?
     false
   end

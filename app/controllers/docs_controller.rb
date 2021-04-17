@@ -42,6 +42,7 @@ class DocsController < ApplicationController
   def update
     @doc = Doc.find(params[:id])
     @doc.title = params[:doc][:title]
+    @doc.excerpt = params[:doc][:excerpt]
     @doc.content = params[:doc][:content]
 
     if @doc.save
@@ -67,8 +68,9 @@ class DocsController < ApplicationController
   def doc_params
     params
       .require(:doc)
-      .permit(:title, :content, :slug)
+      .permit(:title, :content, :slug, :excerpt)
       .merge(slug: params[:doc][:slug].parameterize)
       .merge(category: @category)
+      .merge(user: current_user)
   end
 end

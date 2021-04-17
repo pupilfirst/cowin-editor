@@ -13,7 +13,8 @@
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <%= f.input :title, required: true, label: 'Enter Doc Title' %>
         <%= f.input :slug, required: true, label: 'Enter the file name' %>
-        <%= f.input :content, as: :text, required: true, label: 'Contents (Markdown)' %>
+        <%= f.input :excerpt, required: true, label: 'Excerpt (Short description)', input_html: { maxlength: 250 } %>
+        <%= f.input :content, as: :text, required: true, label: 'Contents (Markdown)', input_html: { class: 'test', rows: 15 } %>
 
         <span class="inline-flex rounded-md shadow-sm">
           <%= f.button :submit, 'Create Doc', class: 'mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition ease-in-out duration-150' %>
