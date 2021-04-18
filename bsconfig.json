@@ -1,0 +1,28 @@
+{
+  "name": "cowin-editor",
+  "reason": {
+    "react-jsx": 3
+  },
+  "sources": {
+    "dir": "app/javascript",
+    "subdirs": true
+  },
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "namespace": false,
+  "bs-dependencies": [
+    "@glennsl/bs-json",
+    "bs-fetch",
+    "bs-webapi",
+    "@rescript/react"
+  ],
+  "warnings": {
+    "number": "-48",
+    "error": "+8"
+  }
+}

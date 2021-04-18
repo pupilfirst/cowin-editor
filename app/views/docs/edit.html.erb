@@ -1,3 +1,19 @@
+<%
+  def props
+    { docId: @doc.id.to_s, markdown: @doc.content }
+  end
+%>
+
+<% content_for(:head) do %>
+  <%# <%= stylesheet_pack_tag 'DocsEditorPack', media: 'all' %>
+<% end %>
+
+<% content_for(:tail) do %>
+  <%# <%= javascript_pack_tag 'DocsEditorPack', 'data-turbolinks-track': 'reload' %>
+<% end %>
+<script type="application/json" id="react-root-data">
+  <%= props.to_json.html_safe %>
+</script>
 <div
   class="bg-white shadow overflow-hidiven  sm:rounded-lg max-w-3xl mx-auto mt-4"
 >
@@ -15,7 +31,7 @@
         <%= f.input :excerpt, required: true, label: 'Excerpt (Short description)', input_html: { maxlength: 250 } %>
 
         <%= f.input :content, as: :text, required: true, label: 'Contents (Markdown)', input_html: { class: 'test',rows: 15 }%>
-
+        <div class="w-full" id="docs-editor"></div>
         <span class="inline-flex rounded-md shadow-sm">
           <%= f.button :submit, 'Update Doc', class: 'mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition ease-in-out duration-150' %>
         </span>
