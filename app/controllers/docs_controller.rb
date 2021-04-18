@@ -26,16 +26,13 @@ class DocsController < ApplicationController
 
     if valid_slug
       if @doc.save
-        flash[:success] = 'Doc created sucessfully!'
         Github::CreateJob.perform_later(@doc)
-        redirect_to doc_path(@doc)
+        render json: { id: @doc.id.to_s, errors: nil }
       else
-        flash.now[:alert] = 'Unable to create!'
-        render :new
+        render json: { error: 'Unable to create!' }
       end
     else
-      flash.now[:alert] = 'Add a unique slug'
-      render :new
+      render json: { error: 'Add a unique filename' }
     end
   end
 
@@ -46,12 +43,10 @@ class DocsController < ApplicationController
     @doc.content = params[:doc][:content]
 
     if @doc.save
-      flash[:success] = 'Doc updated sucessfully!'
       Github::UpdateJob.perform_later(@doc)
-      redirect_to doc_path(@doc)
+      render json: { id: @doc.id.to_s, errors: nil }
     else
-      flash.now[:alert] = 'Unable to update!'
-      render :edit
+      render json: { error: 'Unable to update!' }
     end
   end
 

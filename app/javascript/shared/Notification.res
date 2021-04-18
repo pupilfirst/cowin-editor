@@ -1,4 +1,7 @@
-let jsNotify = (title, text, status) => Js.log(title ++ text ++ status)
+type jsNotify
+
+@bs.module("./notifier")
+external jsNotify: (string, string, string) => unit = "default"
 
 let success = (title, text) => jsNotify(title, text, "success")
 let error = (title, text) => jsNotify(title, text, "error")
