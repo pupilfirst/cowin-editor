@@ -25,6 +25,8 @@ gem "omniauth-rails_csrf_protection", '~> 1.0.0'
 gem 'omniauth-google-oauth2', '~> 0.8.1'
 # github api
 gem "octokit", "~> 4.0"
+# Delayed Job for deferring tasks.
+gem 'delayed_job_active_record', '~> 4.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
