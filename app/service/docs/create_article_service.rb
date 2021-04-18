@@ -15,7 +15,7 @@ module Docs
 ---
 title: #{@doc.title}
 excerpt: #{@doc.excerpt}
-date: #{@doc.created_at.to_time.iso8601}
+date: "#{@doc.created_at.to_time.iso8601}"
 author:
   name: #{@doc.user.name}
 ---

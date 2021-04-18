@@ -42,6 +42,8 @@ gem 'simple_form', "~> 5.1.0"
 # kramdown is a fast, pure Ruby Markdown superset converter, using a strict syntax definition and supporting several common extensions. http://kramdown.gettalong.org
 gem 'kramdown', '~> 2.3'
 
+gem "mini_magick",'~> 4.11.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -65,6 +67,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+group :production do
+  gem 'aws-sdk-s3', '~> 1.35 ', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

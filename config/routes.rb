@@ -25,5 +25,9 @@ Rails
 
     resources :docs, only: %w[show edit update]
 
+    resources :markdown_attachments, only: %i[create] do
+      member { get '/:token', action: 'download', as: 'download' }
+    end
+
     root to: 'home#index'
   end

@@ -154,9 +154,9 @@ let make = (~docId, ~title, ~slug, ~content, ~excerpt, ~categoryId) => {
         onChange={m => send(UpdateContent(m))}
         value=state.content
         placeholder="Type target group description"
-        profile=Markdown.AreaOfText
+        profile=Markdown.Permissive
         maxLength=10000
-        fileUpload=false
+        fileUpload=true
       />
     </div>
     <div>
