@@ -10,11 +10,10 @@ class MarkdownAttachmentsController < ApplicationController
       )
 
     if file
-      Github::CreateImageService.new(params[:markdown_attachment][:file], file)
-        .execute
-
       embed_code =
         MarkdownAttachments::EmbedCodeService.new(file, view_context).embed_code
+
+      # Github::CreateImageService.new(params[:markdown_attachment][:file], file).execute
       render json: { errors: [], markdownEmbedCode: embed_code }
     else
       render json: { errors: form.errors.full_messages }

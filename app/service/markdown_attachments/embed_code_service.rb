@@ -11,6 +11,12 @@ module MarkdownAttachments
     end
 
     def url
+      "#{ENV['SITE_URL']}#{@view_context.url_for(@markdown_attachment.file)}"
+    end
+
+    private
+
+    def github_url
       "#{ENV['SITE_URL']}/images/#{@markdown_attachment.token}-#{@markdown_attachment.file.filename}"
     end
 
