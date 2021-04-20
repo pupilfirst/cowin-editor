@@ -10,10 +10,8 @@ module MarkdownAttachments
       @markdown_attachment.image? ? "!#{code}" : code
     end
 
-    private
-
     def url
-      "#{ENV['SITE_URL']}#{@view_context.url_for(@markdown_attachment.file)}"
+      "#{ENV['SITE_URL']}/images/#{@markdown_attachment.token}-#{@markdown_attachment.file.filename}"
     end
 
     def filename
