@@ -29,5 +29,7 @@ Rails
       member { get '/:token', action: 'download', as: 'download' }
     end
 
+    get '/search', to: 'search#search'
+
     root to: 'home#index'
   end

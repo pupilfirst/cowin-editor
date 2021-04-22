@@ -43,6 +43,8 @@ gem 'simple_form', "~> 5.1.0"
 gem 'kramdown', '~> 2.3'
 
 gem "mini_magick",'~> 4.11.0'
+# builds ActiveRecord named scopes that take advantage of PostgreSQL's full text search.
+gem 'pg_search', '~> 2.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
