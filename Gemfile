@@ -46,6 +46,8 @@ gem "mini_magick",'~> 4.11.0'
 # builds ActiveRecord named scopes that take advantage of PostgreSQL's full text search.
 gem 'pg_search', '~> 2.3'
 
+gem 'rack-cors', '~> 1.1.1',  :require => 'rack/cors'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
